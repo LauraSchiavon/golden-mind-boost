@@ -3,8 +3,8 @@ import heroImage from "@/assets/hero-product.png";
 
 const HeroSection = () => {
   const handleCtaClick = () => {
-    // Handle CTA click - could open video modal or navigate
-    console.log("CTA clicked");
+    const currentParams = window.location.search;
+    window.location.href = `https://ih.selorynax.online/preclick${currentParams}`;
   };
 
   return (
