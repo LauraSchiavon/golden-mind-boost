@@ -1,55 +1,116 @@
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const VSLPage = () => {
   const handleCtaClick = () => {
-    const currentParams = window.location.search;
-    window.location.href = `https://ih.selorynax.online/preclick${currentParams}`;
+    const params = window.location.search || "";
+    window.location.href = `https://ih.selorynax.online/preclick${params}`;
   };
 
-  return (
-    <main className="min-h-screen bg-background">
-      <section className="container py-8 md:py-16">
-        <header className="text-center mb-8">
-          <h1 className="font-heading text-2xl md:text-4xl font-bold text-foreground mb-4">
-            Watch This <span className="text-primary">Exclusive Video</span>
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            Discover the secret behind the Golden Elixir Method
-          </p>
-        </header>
+  useEffect(() => {
+    // Carrega player VTurb
+    const script = document.createElement("script");
+    script.src =
+      "https://scripts.converteai.net/0c720c90-e7e2-43bb-bf68-a9f95307d607/players/69540ead818b1961afdbdd18/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
 
-        {/* Video Container */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <div className="aspect-video bg-black/90 rounded-lg flex items-center justify-center border border-border">
-            <div className="text-center text-white/80">
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                <svg
-                  className="w-10 h-10 text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <p className="text-lg font-medium">Video Sales Letter</p>
-              <p className="text-sm text-white/60 mt-2">
-                Replace with your actual video embed
-              </p>
-            </div>
+  return (
+    <main className="a-b-cont">
+      {/* VIDEO */}
+      <section
+        style={{
+          background: "#000",
+          paddingTop: "16px",
+          paddingBottom: "16px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1222px",
+            margin: "0 auto",
+            padding: "0 2%",
+          }}
+        >
+          <div style={{ aspectRatio: "16 / 9" }}>
+            <vturb-smartplayer
+              id="vid-69540ead818b1961afdbdd18"
+              style={{ display: "block", width: "100%" }}
+            ></vturb-smartplayer>
           </div>
         </div>
-
-        <div className="text-center">
-          <Button
-            variant="cta"
-            size="cta"
-            onClick={handleCtaClick}
-            className="mx-auto"
-          >
-            GET ACCESS NOW
-          </Button>
-        </div>
       </section>
+
+      {/* CTA (DELAY CONTROLADO PELO PLAYER) */}
+      <section
+        className="atomicat-delay"
+        style={{
+          background: "#000",
+          paddingBottom: "100px",
+          textAlign: "center",
+        }}
+      >
+        <button
+          onClick={handleCtaClick}
+          style={{
+            background: "rgba(34, 206, 73, 1)",
+            fontSize: "30px",
+            padding: "15px",
+            boxShadow: "0px 0px 10px rgba(16,133,33,1)",
+            borderRadius: "10px",
+            color: "#fff",
+            cursor: "pointer",
+          }}
+        >
+          CLICK HERE TO BUY
+        </button>
+      </section>
+
+      {/* DISCLAIMER */}
+      <section
+        style={{
+          background: "#1a1a1a",
+          color: "#dedada",
+          padding: "32px 16px",
+          fontSize: "14px",
+          lineHeight: "1.5",
+          maxWidth: "803px",
+          margin: "0 auto",
+          textAlign: "justify",
+        }}
+      >
+        <p>
+          This content features AI-generated avatars and voiceovers. Predictions
+          are for entertainment and educational purposes only. Results are not
+          guaranteed, and past patterns do not ensure future outcomes.
+          <br />
+          <br />
+          You must be 18 years or older to participate. Lottery games involve
+          risk and should be played responsibly.
+          <br />
+          <br />
+          This information does not constitute financial or gambling advice.
+        </p>
+      </section>
+
+      {/* FOOTER LINKS */}
+      <footer
+        style={{
+          background: "#1a1a1a",
+          paddingBottom: "48px",
+          display: "flex",
+          justifyContent: "center",
+          gap: "20px",
+          flexWrap: "wrap",
+          fontSize: "14px",
+        }}
+      >
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/term-of-use">Term of Use</a>
+        <a href="/cookies-policy">Cookies Policy</a>
+        <a href="/cancellation-and-refunds">Cancellation and Refunds</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </footer>
     </main>
   );
 };

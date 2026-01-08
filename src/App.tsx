@@ -10,6 +10,7 @@ import CookiesPolicy from "./pages/CookiesPolicy";
 import CancellationRefunds from "./pages/CancellationRefunds";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
+import "./App.css";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,10 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/term-of-use" element={<TermsOfUse />} />
           <Route path="/cookies-policy" element={<CookiesPolicy />} />
-          <Route path="/cancellation-and-refunds" element={<CancellationRefunds />} />
+          <Route
+            path="/cancellation-and-refunds"
+            element={<CancellationRefunds />}
+          />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

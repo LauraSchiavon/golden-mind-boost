@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-product.png";
+import heroImage from "@/assets/capa.webp";
 
 interface PreSellPageProps {
   onGoToWhite?: () => void;
@@ -7,69 +6,41 @@ interface PreSellPageProps {
 
 const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
   return (
-    <main>
-      {/* Header Section */}
-      <section className="container">
-        <header className="pt-6 md:pt-12 pb-5 text-center px-2">
-          <h1 className="font-heading text-2xl md:text-5xl font-bold leading-tight md:leading-[60px] tracking-tight text-foreground mb-5">
-            Amplify Your Cognitive Power With This{" "}
-            <span className="text-primary">Golden Elixir</span> Method
-          </h1>
-        </header>
+    <main className="main-container">
+      <div className="content-wrapper">
+        {/* Text Section */}
+        <div className="text-section">
+          <div className="main-text">
+            {`I was just a farmer from Texas.
+I never really understood how the draws worked.
 
-        {/* Hero Image */}
-        <div className="text-center mb-10">
-          <img
-            src={heroImage}
-            alt="Golden Elixir Method - Brain Health Supplement"
-            className="w-4/5 md:w-[540px] max-w-full h-auto inline-block"
-            loading="eager"
-            fetchPriority="high"
-          />
+Then I saw a short video about an AI that looks at patterns and timing most people miss.
+
+I'm doing this every week
+
+Just a different way to see the numbers can change everything.
+
+👉 Watch the free video`}
+          </div>
         </div>
-      </section>
 
-      {/* Content Section */}
-      <section className="container pt-5 md:pt-10 pb-10">
-        <Button
-          variant="cta"
-          size="cta"
-          onClick={onGoToWhite}
-          className="mx-auto block mb-5"
-        >
-          CLICK TO WATCH
-        </Button>
+        {/* Image + CTA Section */}
+        <div className="image-section">
+          <div className="image-container">
+            <img
+              src={heroImage}
+              alt="AI Pattern Analysis"
+              width={635}
+              height={357}
+              loading="eager"
+            />
+          </div>
 
-        <article className="font-heading text-base md:text-[23px] font-normal leading-6 md:leading-[35px] tracking-tight text-foreground px-5 mb-5 text-justify md:text-left">
-          <p className="mb-6">
-            An acclaimed expert in neurology has unveiled a{" "}
-            <strong>revolutionary approach</strong> proven to significantly
-            boost brain health for countless individuals...
-          </p>
-          <p className="mb-6">
-            This swift, 15-second daily habit offers a natural pathway to{" "}
-            <strong>enhance your cognitive sharpness.</strong>
-          </p>
-          <p className="mb-6">
-            Devised by a leading authority dedicated to{" "}
-            <strong>holistic brain well-being</strong>, this technique is truly
-            pioneering.
-          </p>
-          <p>
-            The 'Clarity Brew' was expertly formulated to empower people to{" "}
-            <strong>sustain vibrant, keen intellects.</strong>
-          </p>
-        </article>
-
-        <Button
-          variant="cta"
-          size="cta"
-          onClick={onGoToWhite}
-          className="mx-auto block"
-        >
-          CLICK TO WATCH
-        </Button>
-      </section>
+          <button className="cta-btn" id="cta-bottom" onClick={onGoToWhite}>
+            CLICK TO WATCH
+          </button>
+        </div>
+      </div>
     </main>
   );
 };
