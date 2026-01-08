@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const WhitePage = () => {
   const handleCtaClick = () => {
-    const currentParams = window.location.search;
-    window.location.href = `https://ih.selorynax.online/preclick${currentParams}`;
+    // No redirect - just a placeholder button
   };
 
   return (

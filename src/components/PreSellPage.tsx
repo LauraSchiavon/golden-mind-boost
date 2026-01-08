@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-product.png";
 
-interface PreSellPageProps {
-  onContinue: () => void;
-}
-
-const PreSellPage = ({ onContinue }: PreSellPageProps) => {
+const PreSellPage = () => {
+  const handleCtaClick = () => {
+    const currentParams = window.location.search;
+    window.location.href = `https://leo.serinavox.online/695ec8b8d375ea098c913926${currentParams}`;
+  };
   return (
     <main>
       {/* Header Section */}
@@ -34,7 +34,7 @@ const PreSellPage = ({ onContinue }: PreSellPageProps) => {
         <Button
           variant="cta"
           size="cta"
-          onClick={onContinue}
+          onClick={handleCtaClick}
           className="mx-auto block mb-5"
         >
           CLICK TO WATCH
@@ -64,7 +64,7 @@ const PreSellPage = ({ onContinue }: PreSellPageProps) => {
         <Button
           variant="cta"
           size="cta"
-          onClick={onContinue}
+          onClick={handleCtaClick}
           className="mx-auto block"
         >
           CLICK TO WATCH
