@@ -68,7 +68,10 @@ const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
         <Button
           variant="cta"
           size="cta"
-          onClick={onGoToWhite}
+          onClick={() => {
+            console.log("Going to white");
+            onGoToWhite?.();
+          }}
           className="mx-auto block"
         >
           GO TO WHITE (TEST)
