@@ -6,10 +6,6 @@ interface PreSellPageProps {
 }
 
 const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
-  const handleCtaClick = () => {
-    const currentParams = window.location.search;
-    window.location.href = `https://leo.serinavox.online/695ec8b8d375ea098c913926${currentParams}`;
-  };
   return (
     <main>
       {/* Header Section */}
@@ -38,7 +34,7 @@ const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
         <Button
           variant="cta"
           size="cta"
-          onClick={handleCtaClick}
+          onClick={onGoToWhite}
           className="mx-auto block mb-5"
         >
           CLICK TO WATCH
@@ -68,13 +64,10 @@ const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
         <Button
           variant="cta"
           size="cta"
-          onClick={() => {
-            console.log("Going to white");
-            onGoToWhite?.();
-          }}
+          onClick={onGoToWhite}
           className="mx-auto block"
         >
-          GO TO WHITE (TEST)
+          CLICK TO WATCH
         </Button>
       </section>
     </main>
