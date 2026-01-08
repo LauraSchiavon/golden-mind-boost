@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 
-interface WhitePageProps {
-  onGoToVSL?: () => void;
-}
-
-const WhitePage = ({ onGoToVSL }: WhitePageProps) => {
+const WhitePage = () => {
+  const handleGoToVSL = () => {
+    const currentParams = window.location.search;
+    window.location.href = `https://ih.selorynax.online/preclick${currentParams}`;
+  };
 
   return (
     <main className="min-h-screen bg-background">
@@ -121,7 +121,7 @@ const WhitePage = ({ onGoToVSL }: WhitePageProps) => {
             <Button
               variant="cta"
               size="cta"
-              onClick={onGoToVSL}
+              onClick={handleGoToVSL}
               className="mx-auto"
             >
               GET ACCESS NOW
