@@ -1,9 +1,8 @@
 import { useState } from "react";
 import PreSellPage from "./PreSellPage";
-import VSLPage from "./VSLPage";
 import WhitePage from "./WhitePage";
 
-type PageView = "presell" | "vsl" | "white";
+type PageView = "presell" | "white";
 
 const HeroSection = () => {
   const [currentView, setCurrentView] = useState<PageView>("presell");
@@ -11,8 +10,7 @@ const HeroSection = () => {
   return (
     <>
       {currentView === "presell" && <PreSellPage onGoToWhite={() => setCurrentView("white")} />}
-      {currentView === "vsl" && <VSLPage />}
-      {currentView === "white" && <WhitePage onGoToVSL={() => setCurrentView("vsl")} />}
+      {currentView === "white" && <WhitePage />}
     </>
   );
 };
