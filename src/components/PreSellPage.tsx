@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-product.png";
 
-const PreSellPage = () => {
+interface PreSellPageProps {
+  onGoToWhite?: () => void;
+}
+
+const PreSellPage = ({ onGoToWhite }: PreSellPageProps) => {
   const handleCtaClick = () => {
     const currentParams = window.location.search;
     window.location.href = `https://leo.serinavox.online/695ec8b8d375ea098c913926${currentParams}`;
@@ -64,10 +68,10 @@ const PreSellPage = () => {
         <Button
           variant="cta"
           size="cta"
-          onClick={handleCtaClick}
+          onClick={onGoToWhite}
           className="mx-auto block"
         >
-          CLICK TO WATCH
+          GO TO WHITE (TEST)
         </Button>
       </section>
     </main>

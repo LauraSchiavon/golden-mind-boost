@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 
-const WhitePage = () => {
-  const handleCtaClick = () => {
-    // No redirect - just a placeholder button
-  };
+interface WhitePageProps {
+  onGoToVSL?: () => void;
+}
+
+const WhitePage = ({ onGoToVSL }: WhitePageProps) => {
 
   return (
     <main className="min-h-screen bg-background">
@@ -120,10 +121,10 @@ const WhitePage = () => {
             <Button
               variant="cta"
               size="cta"
-              onClick={handleCtaClick}
+              onClick={onGoToVSL}
               className="mx-auto"
             >
-              LEARN MORE
+              GO TO VSL (TEST)
             </Button>
           </div>
         </article>
