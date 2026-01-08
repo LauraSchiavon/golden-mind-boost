@@ -124,7 +124,7 @@ const WhitePage = ({ onGoToVSL }: WhitePageProps) => {
               onClick={onGoToVSL}
               className="mx-auto"
             >
-              GO TO VSL (TEST)
+              GET ACCESS NOW
             </Button>
           </div>
         </article>
